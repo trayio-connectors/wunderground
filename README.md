@@ -1,2 +1,3 @@
-# wunderground
-A connector for weather api Wunderground
+# wunderground tray.io connector
+
+A connector for Wunderground weather API

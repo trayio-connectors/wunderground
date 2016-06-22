@@ -1,0 +1,34 @@
+{
+  "name": "tray-connectors",
+  "description": "A connector for Wunderground weather API",
+  "version": "0.0.1",
+  "dependencies": {
+    "@trayio/falafel": "^1.0.42"
+  },
+  "scripts": {
+    "start": "node main.js",
+    "lint": "eslint -f unix .",
+    "inspect": "jsinspect",
+    "pretest": "npm run lint && npm run inspect",
+    "test": "istanbul cover ./node_modules/.bin/_mocha test",
+    "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
+  "author": "Piotr Trzpil",
+  "license": "ISC",
+  "devDependencies": {
+    "generate-schema": "^2.1.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trayio-connectors/wunderground"
+  },
+  "engines": {
+    "node": "5.9.x"
+  }
+}

@@ -1,0 +1,309 @@
+[
+  {
+    "name": "wunderground",
+    "title": "Wunderground",
+    "description": "A connector for Weather Underground API",
+    "version": "1.0",
+    "tags": [
+      "service"
+    ],
+    "icon": {
+      "type": "url",
+      "value": "//s3.amazonaws.com/images.tray.io/static/icons/placeholder.png"
+    },
+    "messages": [
+      {
+        "name": "weather_conditions",
+        "title": "Weather conditions",
+        "description": "Get conditions for a location.",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "country": {
+              "type": "string",
+              "title": "Country or State Code",
+              "description": "A code identifying a country or US state, for example: CA or GB"
+            },
+            "city": {
+              "type": "string",
+              "title": "City",
+              "description": "City name in a format expected by Wunderground, for example: San_Francisco or London"
+            }
+          },
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "required": [
+            "country",
+            "city"
+          ],
+          "advanced": [],
+          "additionalProperties": false
+        },
+        "output_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "response": {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "string"
+                },
+                "termsofService": {
+                  "type": "string"
+                },
+                "features": {
+                  "type": "object",
+                  "properties": {
+                    "conditions": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "current_observation": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "link": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "display_location": {
+                  "type": "object",
+                  "properties": {
+                    "full": {
+                      "type": "string"
+                    },
+                    "city": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "state_name": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "string"
+                    },
+                    "country_iso3166": {
+                      "type": "string"
+                    },
+                    "zip": {
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "type": "string"
+                    },
+                    "longitude": {
+                      "type": "string"
+                    },
+                    "elevation": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "observation_location": {
+                  "type": "object",
+                  "properties": {
+                    "full": {
+                      "type": "string"
+                    },
+                    "city": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "string"
+                    },
+                    "country_iso3166": {
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "type": "string"
+                    },
+                    "longitude": {
+                      "type": "string"
+                    },
+                    "elevation": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "estimated": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "station_id": {
+                  "type": "string"
+                },
+                "observation_time": {
+                  "type": "string"
+                },
+                "observation_time_rfc822": {
+                  "type": "string"
+                },
+                "observation_epoch": {
+                  "type": "string"
+                },
+                "local_time_rfc822": {
+                  "type": "string"
+                },
+                "local_epoch": {
+                  "type": "string"
+                },
+                "local_tz_short": {
+                  "type": "string"
+                },
+                "local_tz_long": {
+                  "type": "string"
+                },
+                "local_tz_offset": {
+                  "type": "string"
+                },
+                "weather": {
+                  "type": "string"
+                },
+                "temperature_string": {
+                  "type": "string"
+                },
+                "temp_f": {
+                  "type": "number"
+                },
+                "temp_c": {
+                  "type": "number"
+                },
+                "relative_humidity": {
+                  "type": "string"
+                },
+                "wind_string": {
+                  "type": "string"
+                },
+                "wind_dir": {
+                  "type": "string"
+                },
+                "wind_degrees": {
+                  "type": "number"
+                },
+                "wind_mph": {
+                  "type": "number"
+                },
+                "wind_gust_mph": {
+                  "type": "string"
+                },
+                "wind_kph": {
+                  "type": "number"
+                },
+                "wind_gust_kph": {
+                  "type": "string"
+                },
+                "pressure_mb": {
+                  "type": "string"
+                },
+                "pressure_in": {
+                  "type": "string"
+                },
+                "pressure_trend": {
+                  "type": "string"
+                },
+                "dewpoint_string": {
+                  "type": "string"
+                },
+                "dewpoint_f": {
+                  "type": "number"
+                },
+                "dewpoint_c": {
+                  "type": "number"
+                },
+                "heat_index_string": {
+                  "type": "string"
+                },
+                "heat_index_f": {
+                  "type": "string"
+                },
+                "heat_index_c": {
+                  "type": "string"
+                },
+                "windchill_string": {
+                  "type": "string"
+                },
+                "windchill_f": {
+                  "type": "string"
+                },
+                "windchill_c": {
+                  "type": "string"
+                },
+                "feelslike_string": {
+                  "type": "string"
+                },
+                "feelslike_f": {
+                  "type": "string"
+                },
+                "feelslike_c": {
+                  "type": "string"
+                },
+                "visibility_mi": {
+                  "type": "string"
+                },
+                "visibility_km": {
+                  "type": "string"
+                },
+                "solarradiation": {
+                  "type": "string"
+                },
+                "UV": {
+                  "type": "string"
+                },
+                "precip_1hr_string": {
+                  "type": "string"
+                },
+                "precip_1hr_in": {
+                  "type": "string"
+                },
+                "precip_1hr_metric": {
+                  "type": "string"
+                },
+                "precip_today_string": {
+                  "type": "string"
+                },
+                "precip_today_in": {
+                  "type": "string"
+                },
+                "precip_today_metric": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                },
+                "icon_url": {
+                  "type": "string"
+                },
+                "forecast_url": {
+                  "type": "string"
+                },
+                "history_url": {
+                  "type": "string"
+                },
+                "ob_url": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+]
