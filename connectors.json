@@ -13,8 +13,8 @@
     },
     "messages": [
       {
-        "name": "weather_conditions",
-        "title": "Weather conditions",
+        "name": "conditions",
+        "title": "Conditions",
         "description": "Get conditions for a location.",
         "input_schema": {
           "type": "object",
@@ -306,6 +306,354 @@
                 },
                 "ob_url": {
                   "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "forecast",
+        "title": "Forecast",
+        "description": "Get weather forecast for a location, for the next 3 days",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "api_key": {
+              "type": "string",
+              "default_jsonpath": "$.auth.api_key",
+              "title": "Api key"
+            },
+            "country": {
+              "type": "string",
+              "title": "Country or State Code",
+              "description": "A code (iso3166) identifying a country or US state, for example: CA or GB"
+            },
+            "city": {
+              "type": "string",
+              "title": "City",
+              "description": "City name in a format expected by Wunderground, for example: San_Francisco or London"
+            }
+          },
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "required": [
+            "api_key",
+            "country",
+            "city"
+          ],
+          "advanced": [
+            "api_key"
+          ],
+          "additionalProperties": false
+        },
+        "output_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "response": {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "string"
+                },
+                "termsofService": {
+                  "type": "string"
+                },
+                "features": {
+                  "type": "object",
+                  "properties": {
+                    "forecast": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "forecast": {
+              "type": "object",
+              "properties": {
+                "txt_forecast": {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "forecastday": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "period": {
+                            "type": "number"
+                          },
+                          "icon": {
+                            "type": "string"
+                          },
+                          "icon_url": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "fcttext": {
+                            "type": "string"
+                          },
+                          "fcttext_metric": {
+                            "type": "string"
+                          },
+                          "pop": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "period",
+                          "icon",
+                          "icon_url",
+                          "title",
+                          "fcttext",
+                          "fcttext_metric",
+                          "pop"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "simpleforecast": {
+                  "type": "object",
+                  "properties": {
+                    "forecastday": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "date": {
+                            "type": "object",
+                            "properties": {
+                              "epoch": {
+                                "type": "string"
+                              },
+                              "pretty": {
+                                "type": "string"
+                              },
+                              "day": {
+                                "type": "number"
+                              },
+                              "month": {
+                                "type": "number"
+                              },
+                              "year": {
+                                "type": "number"
+                              },
+                              "yday": {
+                                "type": "number"
+                              },
+                              "hour": {
+                                "type": "number"
+                              },
+                              "min": {
+                                "type": "string"
+                              },
+                              "sec": {
+                                "type": "number"
+                              },
+                              "isdst": {
+                                "type": "string"
+                              },
+                              "monthname": {
+                                "type": "string"
+                              },
+                              "weekday_short": {
+                                "type": "string"
+                              },
+                              "weekday": {
+                                "type": "string"
+                              },
+                              "ampm": {
+                                "type": "string"
+                              },
+                              "tz_short": {
+                                "type": "string"
+                              },
+                              "tz_long": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "period": {
+                            "type": "number"
+                          },
+                          "high": {
+                            "type": "object",
+                            "properties": {
+                              "fahrenheit": {
+                                "type": "string"
+                              },
+                              "celsius": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "low": {
+                            "type": "object",
+                            "properties": {
+                              "fahrenheit": {
+                                "type": "string"
+                              },
+                              "celsius": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "conditions": {
+                            "type": "string"
+                          },
+                          "icon": {
+                            "type": "string"
+                          },
+                          "icon_url": {
+                            "type": "string"
+                          },
+                          "skyicon": {
+                            "type": "string"
+                          },
+                          "pop": {
+                            "type": "number"
+                          },
+                          "qpf_allday": {
+                            "type": "object",
+                            "properties": {
+                              "in": {
+                                "type": "number"
+                              },
+                              "mm": {
+                                "type": "number"
+                              }
+                            }
+                          },
+                          "qpf_day": {
+                            "type": "object",
+                            "properties": {
+                              "in": {
+                                "type": "number"
+                              },
+                              "mm": {
+                                "type": "number"
+                              }
+                            }
+                          },
+                          "qpf_night": {
+                            "type": "object",
+                            "properties": {
+                              "in": {
+                                "type": "number"
+                              },
+                              "mm": {
+                                "type": "number"
+                              }
+                            }
+                          },
+                          "snow_allday": {
+                            "type": "object",
+                            "properties": {
+                              "in": {
+                                "type": "number"
+                              },
+                              "cm": {
+                                "type": "number"
+                              }
+                            }
+                          },
+                          "snow_day": {
+                            "type": "object",
+                            "properties": {
+                              "in": {
+                                "type": "number"
+                              },
+                              "cm": {
+                                "type": "number"
+                              }
+                            }
+                          },
+                          "snow_night": {
+                            "type": "object",
+                            "properties": {
+                              "in": {
+                                "type": "number"
+                              },
+                              "cm": {
+                                "type": "number"
+                              }
+                            }
+                          },
+                          "maxwind": {
+                            "type": "object",
+                            "properties": {
+                              "mph": {
+                                "type": "number"
+                              },
+                              "kph": {
+                                "type": "number"
+                              },
+                              "dir": {
+                                "type": "string"
+                              },
+                              "degrees": {
+                                "type": "number"
+                              }
+                            }
+                          },
+                          "avewind": {
+                            "type": "object",
+                            "properties": {
+                              "mph": {
+                                "type": "number"
+                              },
+                              "kph": {
+                                "type": "number"
+                              },
+                              "dir": {
+                                "type": "string"
+                              },
+                              "degrees": {
+                                "type": "number"
+                              }
+                            }
+                          },
+                          "avehumidity": {
+                            "type": "number"
+                          },
+                          "maxhumidity": {
+                            "type": "number"
+                          },
+                          "minhumidity": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "date",
+                          "period",
+                          "high",
+                          "low",
+                          "conditions",
+                          "icon",
+                          "icon_url",
+                          "skyicon",
+                          "pop",
+                          "qpf_allday",
+                          "qpf_day",
+                          "qpf_night",
+                          "snow_allday",
+                          "snow_day",
+                          "snow_night",
+                          "maxwind",
+                          "avewind",
+                          "avehumidity",
+                          "maxhumidity",
+                          "minhumidity"
+                        ]
+                      }
+                    }
+                  }
                 }
               }
             }

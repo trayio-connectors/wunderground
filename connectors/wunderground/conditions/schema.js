@@ -6,7 +6,7 @@
 
 module.exports = {
 
-	title: 'Weather conditions',
+	title: 'Conditions',
 
 	description: 'Get conditions for a location.',
 
