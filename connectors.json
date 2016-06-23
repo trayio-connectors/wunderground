@@ -19,10 +19,15 @@
         "input_schema": {
           "type": "object",
           "properties": {
+            "api_key": {
+              "type": "string",
+              "default_jsonpath": "$.auth.api_key",
+              "title": "Api key"
+            },
             "country": {
               "type": "string",
               "title": "Country or State Code",
-              "description": "A code identifying a country or US state, for example: CA or GB"
+              "description": "A code (iso3166) identifying a country or US state, for example: CA or GB"
             },
             "city": {
               "type": "string",
@@ -32,10 +37,13 @@
           },
           "$schema": "http://json-schema.org/draft-04/schema#",
           "required": [
+            "api_key",
             "country",
             "city"
           ],
-          "advanced": [],
+          "advanced": [
+            "api_key"
+          ],
           "additionalProperties": false
         },
         "output_schema": {
