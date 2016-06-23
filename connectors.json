@@ -9,7 +9,7 @@
     ],
     "icon": {
       "type": "url",
-      "value": "//s3.amazonaws.com/images.tray.io/static/icons/placeholder.png"
+      "value": "//s3.amazonaws.com/images.tray.io/static/service/icons/wunderground.png"
     },
     "messages": [
       {
