@@ -12,7 +12,7 @@ module.exports = {
   title: 'Wunderground',
 
  	// The connector description
-  description: 'A connector for Weather Underground API',
+  description: 'Weather information and forecasts using Weather Underground API',
 
   // Version of the connector. Updating this will allow users to choose
   // which connector version they use in advanced settings of the tray UI.
