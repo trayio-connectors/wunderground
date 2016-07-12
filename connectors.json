@@ -2,7 +2,7 @@
   {
     "name": "wunderground",
     "title": "Wunderground",
-    "description": "A connector for Weather Underground API",
+    "description": "Weather information and forecasts using Weather Underground API",
     "version": "1.0",
     "tags": [
       "service"
