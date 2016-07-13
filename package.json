@@ -3,7 +3,7 @@
   "description": "Weather information and forecasts using Weather Underground API",
   "version": "0.0.1",
   "dependencies": {
-    "@trayio/falafel": "^1.0.51"
+    "@trayio/falafel": "1.0.42"
   },
   "scripts": {
     "start": "node main.js",

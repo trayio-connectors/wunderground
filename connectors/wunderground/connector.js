@@ -9,7 +9,7 @@ module.exports = {
 	// The name of the connector is the folder name
 
 	// The title
-  title: 'Wunderground',
+  title: 'Weather Underground',
 
  	// The connector description
   description: 'Weather information and forecasts using Weather Underground API',
