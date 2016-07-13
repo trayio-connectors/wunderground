@@ -1,7 +1,7 @@
 [
   {
     "name": "wunderground",
-    "title": "Wunderground",
+    "title": "Weather Underground",
     "description": "Weather information and forecasts using Weather Underground API",
     "version": "1.0",
     "tags": [
